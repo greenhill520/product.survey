@@ -79,7 +79,7 @@ var demo = {
     getHtmlByContent: function(content) {
         var html = '';
         var litemplate =
-            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal">{{title}}</a></h3><p>Artist：{{relevant}}</p><p>Album: {{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 1)">Select</button></div>';
+            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 1)"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 1)">{{title}}</a></h3><p>Artist：{{relevant}}</p><p>Album: {{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 1)">Select</button></div>';
         for(var i = 0, len = content.length; i < len; i++) {
             var tmp = content[i];
             html += litemplate.replace(/\{\{demoLink\}\}/g, tmp.demoLink)
@@ -95,7 +95,7 @@ var demo = {
     getHtmlByContent2: function(content) {
         var html = '';
         var litemplate =
-            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal">{{title}}</a></h3><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 2)">Select</button></div>';
+            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 2)"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 2)">{{title}}</a></h3><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}}, 2)">Select</button></div>';
         for(var i = 0, len = content.length; i < len; i++) {
             var tmp = content[i];
             html += litemplate.replace(/\{\{demoLink\}\}/g, tmp.demoLink)
