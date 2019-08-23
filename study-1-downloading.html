@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta content="computer, human interaction, waterfallFlow" name="Keywords">
+		<meta content="Test Computer in human interaction" name="description">
+        <title>Product Survey</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/mdb.min.css">
+        <link rel="stylesheet" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+	</head>
+
+	<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Product Survey</a>
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="col-md-7 p-lg-7 mx-auto my-7 text-center title-top">
+            <h1 class="display-5 font-weight-normal" id="title"></h1>
+        </div>
+        <div class="text-center" id="loading-img"></div>
+        
+        
+        <!-- Footer -->
+        <footer class="page-footer font-small grey">
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="#">  FUYAT inc.</a>
+            </div>
+        </footer>
+
+    </body>
+    
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var case_num = getUrlVars()['case_num'];
+        if( case_num > 0 && case_num < 7 ) {
+            document.getElementById("title").innerHTML = '<b>Downloading...</b>';
+
+            dog_num = 1;
+            if( case_num == 1 || case_num == 4 ) {
+                dog_num = 1;
+            }
+            else if( case_num == 2 || case_num == 5 ) {
+                dog_num = 2;
+            }
+            else {
+                dog_num = 3;
+            }
+
+            src_path = "imgs/dog/dog-" + dog_num + ".gif";
+            _img = `<img src="${src_path}" id="loading-img">`;
+            document.querySelector('#loading-img').innerHTML = _img;
+        }
+        else {
+            alert("Invalid case number.");
+        }
+         
+        var content_num = 1;
+        if(case_num <= 3) {
+            content_num = 1;
+        }
+        else {
+            content_num = 2;
+        }
+        var WaitTime = 17;
+        function WaitDo(){
+            if(WaitTime > 0){
+                WaitTime --;
+                setTimeout("WaitDo()", 1000);
+            }
+            else {
+                window.location = 'study-1-content.html?content_num=' + content_num + "&case_num=" + case_num;
+            }
+        }
+        WaitDo();
+
+    </script>
+</html>
