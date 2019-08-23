@@ -331,7 +331,7 @@ function showDetail() {
                     </div>
                     </div>
                 </div>
-                `
+                `;
         document.querySelector('#loading-img').innerHTML = bodyD;
         document.querySelector('#myModalLabel').innerHTML = "Are you sure you choose this music?";
     }
@@ -350,7 +350,7 @@ function showDetail() {
                     </div>
                     </div>
                 </div>
-                `
+                `;
         document.querySelector('#loading-img').innerHTML = bodyD;
         document.querySelector('#myModalLabel').innerHTML = "Are you sure you choose this course?";
     }
@@ -389,7 +389,7 @@ $(function() {
             }
             
             src_path = "imgs/dog/dog-" + box_num + ".gif";
-            _img = `<img src="${src_path}" class="rounded" id="loading-img">`;
+            _img = `<img src="${src_path}" class="rounded">`;
             document.querySelector('#loading-img').innerHTML = _img;
         }
 
