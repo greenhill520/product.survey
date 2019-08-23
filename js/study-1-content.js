@@ -67,7 +67,7 @@ var demo = {
             gutter: 20,
             loadSuccess: function(self, isInit) {
                 if(isInit) {
-                    //self.load('<div class="grid-item"><a class="demo-img"href="{{demoLink}}"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p>{{description}}<a href="{{codeLink}}">&nbsp;&nbsp;Link&nbsp;&nbsp;<i class="icon icon-code"></i></a></p></div>');
+                    //self.load('<div class="grid-item"><a class="demo-img" href="{{demoLink}}"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p>{{description}}<a href="{{codeLink}}">&nbsp;&nbsp;Link&nbsp;&nbsp;<i class="icon icon-code"></i></a></p></div>');
                 } else {
                     // do nothing
                 }
@@ -79,7 +79,7 @@ var demo = {
     getHtmlByContent: function(content) {
         var html = '';
         var litemplate =
-            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal"><img src="{{imgLink}}"></a><h3 class="card-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">Select</button></div>';
+            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})"><img src="{{imgLink}}"></a><h3 class="card-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">Select</button></div>';
         for(var i = 0, len = content.length; i < len; i++) {
             var tmp = content[i];
             html += litemplate.replace(/\{\{demoLink\}\}/g, tmp.demoLink)
