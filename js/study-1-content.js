@@ -79,12 +79,12 @@ var demo = {
     getHtmlByContent: function(content) {
         var html = '';
         var litemplate =
-            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal"><img src="{{imgLink}}"></a><h3 class="card-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal">Select</button></div>';
+            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal"><img src="{{imgLink}}"></a><h3 class="card-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">Select</button></div>';
         for(var i = 0, len = content.length; i < len; i++) {
             var tmp = content[i];
             html += litemplate.replace(/\{\{demoLink\}\}/g, tmp.demoLink)
                 .replace(/\{\{imgLink\}\}/g, tmp.imgLink)
-                .replace(/\{\{codeLink\}\}/g, tmp.codeLink)
+                .replace(/\{\{num\}\}/g, i)
                 .replace(/\{\{relevant\}\}/g, tmp.relevant)
                 .replace(/\{\{title\}\}/g, tmp.title)
                 .replace(/\{\{description\}\}/g, tmp.description);
@@ -92,7 +92,7 @@ var demo = {
         return html;
     },
 
-    init_chocolate: function() {
+    init_chocolate: function(flag) {
         var demoContent = [{
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-1.jpg',
@@ -143,15 +143,20 @@ var demo = {
             description: 'A sophisticated collection of elegant European style pralines, crafted with our exquisite milk, dark and white chocolate and paired with flavors like caramel, orange, hazelnut and stracciatella.'
         }];
 
-        var html = this.getHtmlByContent(demoContent);
-        var grid = document.querySelector('.grid');
+        if(flag == true) {
+            var html = this.getHtmlByContent(demoContent);
+            var grid = document.querySelector('.grid');
 
-        grid.innerHTML = html;
+            grid.innerHTML = html;
 
-        var flow = this.initGrid();
+            var flow = this.initGrid();
+        }
+        else {
+            return demoContent;
+        }
     },
 
-    init_toothpaste: function() {
+    init_toothpaste: function(flag) {
         var demoContent = [{
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-1.jpg',
@@ -202,12 +207,17 @@ var demo = {
             description: 'Grants Whitening Toothpaste with Baking Soda has a strong, cool minty taste that leaves the mouth feeling fresh and clean. Baking Soda helps to naturally whiten teeth and remove stains.'
         }];
 
-        var html = this.getHtmlByContent(demoContent);
-        var grid = document.querySelector('.grid');
+        if(flag == true) {
+            var html = this.getHtmlByContent(demoContent);
+            var grid = document.querySelector('.grid');
 
-        grid.innerHTML = html;
+            grid.innerHTML = html;
 
-        var flow = this.initGrid();
+            var flow = this.initGrid();
+        }
+        else {
+            return demoContent;
+        }
     }
 };
 
@@ -218,7 +228,7 @@ $(function() {
 $(function() {
     $('#myModal').on('show.bs.modal',
     function() {
-        // do nothing
+        showDetail()
     });
 });
 
@@ -232,10 +242,10 @@ function getUrlVars() {
 
 var content_num = getUrlVars()['content_num'];
 if(content_num == 1) {
-    demo.init_chocolate();
+    demo.init_chocolate(true);
 }
 else if(content_num == 2) {
-    demo.init_toothpaste();
+    demo.init_toothpaste(true);
 }
 else {
     alert("Invalid content number.")
@@ -245,4 +255,43 @@ var case_num = getUrlVars()['case_num']
 
 function finish() {
     window.location.href = "thanks.html?study_num=1&case_num=" + case_num;
+}
+
+var t;
+var imgLink_1;
+var title_1;
+var relevant_1;
+var description_1;
+
+function getContent(num) {
+    var demoCont;
+    if(content_num == 1) {
+        demoCont = demo.init_chocolate(false);
+    }
+    else {
+        demoCont = demo.init_toothpaste(false);
+    }
+    imgLink_1 = demoCont[num].imgLink;
+    title_1 = demoCont[num].title;
+    relevant_1 = demoCont[num].relevant;
+    description_1 = demoCont[num].description;
+}
+
+function showDetail() {
+    var bodyD = `<div class="card mb-3" style="max-width: 720px;">
+                    <div class="row no-gutters">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="${imgLink_1}" class="card-img">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${title_1}</h5>
+                            <p class="card-text">Revevant: ${relevant_1}</p>
+                            <p class="card-text">Description: ${description_1}</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                `;
+    document.querySelector('#content_detail').innerHTML = bodyD;
 }
