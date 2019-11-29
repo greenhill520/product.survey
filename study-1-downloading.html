@@ -7,7 +7,7 @@
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<meta content="computer, human interaction, waterfallFlow" name="Keywords">
 		<meta content="Test Computer in human interaction" name="description">
-        <title>Product Survey</title>
+        <title>产品调查</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/mdb.min.css">
         <link rel="stylesheet" href="css/index.css" />
@@ -21,7 +21,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Product Survey</a>
+            <a class="navbar-brand" href="#">产品调查</a>
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,8 +29,8 @@
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">关于</a></li>
                 </ul>
             </div>
         </nav>
@@ -62,7 +62,7 @@
 
         var case_num = getUrlVars()['case_num'];
         if( case_num > 0 && case_num < 7 ) {
-            document.getElementById("title").innerHTML = '<b>Downloading...</b>';
+            document.getElementById("title").innerHTML = '<b>正在加载中...</b>';
 
             dog_num = 1;
             if( case_num == 1 || case_num == 4 ) {
