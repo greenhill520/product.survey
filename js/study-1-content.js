@@ -67,7 +67,7 @@ var demo = {
             gutter: 20,
             loadSuccess: function(self, isInit) {
                 if(isInit) {
-                    //self.load('<div class="grid-item"><a class="demo-img" href="{{demoLink}}"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p>{{description}}<a href="{{codeLink}}">&nbsp;&nbsp;Link&nbsp;&nbsp;<i class="icon icon-code"></i></a></p></div>');
+                    //self.load('<div class="grid-item"><a class="demo-img"href="{{demoLink}}"><img src="{{imgLink}}"></a><h3 class="demo-title"><a href="{{demoLink}}">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p>{{description}}<a href="{{codeLink}}">&nbsp;&nbsp;Link&nbsp;&nbsp;<i class="icon icon-code"></i></a></p></div>');
                 } else {
                     // do nothing
                 }
@@ -79,7 +79,7 @@ var demo = {
     getHtmlByContent: function(content) {
         var html = '';
         var litemplate =
-            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})"><img src="{{imgLink}}"></a><h3 class="card-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">{{title}}</a></h3><p>Relevant：{{relevant}}</p><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">Select</button></div>';
+            '<div class="grid-item"><a class="demo-img" href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})"><img src="{{imgLink}}"></a><h3 class="card-title"><a href="{{demoLink}}" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">{{title}}</a></h3><p>品牌：{{relevant}}</p><p id="p-line">{{description}}</p><button type="button" class="btn btn-primary btn-sm donate_btn" data-toggle="modal" data-target="#myModal" onclick="getContent({{num}})">选择</button></div>';
         for(var i = 0, len = content.length; i < len; i++) {
             var tmp = content[i];
             html += litemplate.replace(/\{\{demoLink\}\}/g, tmp.demoLink)
@@ -96,51 +96,51 @@ var demo = {
         var demoContent = [{
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-1.jpg',
-            title: 'Milk Chocolate Caramels',
+            title: '牛奶焦糖巧克力',
             relevant: 'LORE\'S',
-            description: 'Our signature recipe: simply caramelized cream and butter, covered in rich chocolate, resulting in a tender and smooth confection.'
+            description: '我们的招牌配方: 简单的焦糖奶油和黄油, 上面涂上浓郁的巧克力, 可带来柔滑的甜食!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-2.jpg',
-            title: 'Every Flavor Chocolates',
+            title: '百味巧克力',
             relevant: 'JOHN&KIRA\'S',
-            description: 'Our 6-piece Every Flavor assortment is the perfect way for you to give your friends and family a special treat this Holiday.'
+            description: '我们的6种口味的"每种口味"组合是您在假期期间为您的朋友和家人提供特殊对待的完美方式!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-3.jpg',
-            title: 'Caramel Assortment',
+            title: '焦糖类巧克力',
             relevant: 'Shane Confectionery',
-            description: 'An assortment of our traditional caramels. Your choice of an assortment of: – All our vanilla, sea salt, and chocolate flavored caramels dipped in milk and dark chocolate.'
+            description: '各种各样的传统焦糖! 您可以选择-我们所有的香草, 海盐和蘸有牛奶和黑巧克力的巧克力味焦糖!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-4.jpg',
-            title: 'Dark Chocolate Collection',
+            title: '黑巧克力系列',
             relevant: 'MignonChocolate',
-            description: 'The Dark Chocolate collection with bold and rich flavors beautifully blended using the finest gourmet cocoa will transport you to another time when life was sweeter.'
+            description: '使用最上乘的美味可可将浓郁, 浓郁的黑巧克力完美融合, 将您带入另一个甜蜜的时光!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-5.jpg',
-            title: 'Assorted Chocolates',
+            title: '什锦巧克力',
             relevant: 'MUELLER',
-            description: 'An assortment of delicious hand made chocolate candies in your choice of milk, dark or a combination.'
+            description: '您可以选择各种美味的手工制作的巧克力糖果, 包括牛奶，深色或混合牛奶!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-6.jpg',
-            title: 'LES ADORABLES MOCHA',
+            title: '摩卡咖啡巧克力',
             relevant: 'FREY',
-            description: 'Deliciously refined fillings encased in crisp chocolate. These little treasures troves of flavour are waiting to be discovered. Unique, surprising – and always so utterly delectable.'
+            description: '用脆巧克力包裹的美味精致馅料! 这些小宝贝宝库的味道正在等待被发现! 独特, 令人惊讶, 始终如此令人愉悦!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-7.jpg',
-            title: 'Dove Milk Chocolate',
+            title: '德芙牛奶巧克力',
             relevant: 'Dove',
-            description: 'Rural India develops taste for chocolate.'
+            description: '印度农村地区的巧克力口味!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-8.jpg',
-            title: 'Swiss Luxury',
+            title: '瑞士奢华',
             relevant: 'Lindt',
-            description: 'A sophisticated collection of elegant European style pralines, crafted with our exquisite milk, dark and white chocolate and paired with flavors like caramel, orange, hazelnut and stracciatella.'
+            description: '精致典雅的欧式果仁糖系列, 以我们精美的牛奶, 黑巧克力和白巧克力精制而成, 并搭配焦糖, 橙子, 榛子和意大利细面条等口味!'
         }];
 
         if(flag == true) {
@@ -160,51 +160,51 @@ var demo = {
         var demoContent = [{
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-1.jpg',
-            title: 'Crest Complete Whitening + Scope Toothpaste',
+            title: '佳洁士完全美白牙膏',
             relevant: 'Crest, Toothpaste',
-            description: 'When clean and fresh got together, they created a toothpaste that delivers the stain-removing power of Crest and the breath freshening blast of minty Scope. It’s the ultimate combination of clean and fresh: it helps fight cavities, prevents tartar, and provides teeth whitening from cleaning action that helps to remove surface stains, all while helping to keep your breath minty fresh and ready for anything.'
+            description: '当干净和新鲜在一起时, 他们创造了一种牙膏, 可提供佳洁士的去污力和薄荷Scope的清新口气! 它是清洁与清新的终极组合: 它有助于抵抗蛀牙, 防止牙垢, 并通过清洁作用使牙齿增白, 从而有助于清除表面的污渍, 同时还能使您的口气清新如水, 并为任何事情做好准备!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-5.jpg',
-            title: 'Colgate Optic White Sparkling Mint Whitening',
+            title: '高露洁光学白气泡薄荷牙膏',
             relevant: 'Colgate, Toothpaste',
-            description: 'Colgate Optic White Sparkling Mint Toothpaste is specially designed to help you get a white smile while freshening your breath. It delivers whiter teeth in one week (for best results, use as directed for 4 weeks), and goes beyond surface stain removal to deeply whiten (brushing twice daily for 4 weeks). Its enamel-safe, anticavity fluoride formula helps protect teeth from cavities while removing stains for the white, fresh smile you\'ve always wanted.'
+            description: '高露洁光学白气泡薄荷美白牙膏经过特别设计, 可帮助您在清新口气的同时获得白皙的微笑! 它可以在一周内使牙齿变白 (为达到最佳效果，请按照说明使用4周), 并且不仅可以去除表面污渍, 还可以深层变白 (每天刷牙两次，持续4周)! 其搪瓷安全, 抗龋齿的氟化物配方有助于保护牙齿免受蛀牙的影响, 同时清除您一直想要的白色清新微笑的污渍!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-6.jpg',
-            title: 'hello soothing relief fluoride toothpaste',
+            title: 'hello 舒缓氟化物牙膏',
             relevant: 'hello, Toothpaste',
-            description: 'Because sensitive teeth need a little love and affection. hello® toothpaste for sensitive teeth with fluoride, coconut oil and aloe vera.'
+            description: '因为敏感的牙齿需要一点爱和关爱! hello®牙膏含氟化物, 椰子油和芦荟, 可用于敏感牙齿!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-7.jpg',
-            title: 'CloSYS Sulfate-Free Fluoride Toothpaste',
+            title: 'CloSYS无硫酸盐氟化物牙膏',
             relevant: 'CloSYS, Toothpaste',
-            description: 'The Cloralstan™ formula in CloSYS is naturally activated by the amino acids in saliva giving you the confidence that comes from eliminating the germs and bacteria that may cause other health issues in your mouth and body.'
+            description: 'CloSYS中的Cloralstan™配方可被唾液中的氨基酸自然激活, 从而消除了可能导致口腔和身体其他健康问题的细菌和细菌, 从而给您带来信心!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-8.jpg',
-            title: 'Premium Zinc Ion Toothpaste',
+            title: '优质锌离子牙膏',
             relevant: 'SmartMouth',
-            description: 'SmartMouth Premium Zinc Ion Toothpaste combines zinc ion technology with fluoride to strengthen enamel, remove dental plaque, prevent cavities and provide sensitive whitening — all with a mild mint flavor and no aftertaste.'
+            description: 'SmartMouth优质锌离子牙膏将锌离子技术与氟化物结合在一起, 可增强牙釉质, 去除牙菌斑, 预防蛀牙并提供敏感的美白效果-所有这些均具有温和的薄荷味且无余味!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-9.jpg',
-            title: 'VEGAN B-12 INFUSED TEETH WHITENING',
+            title: 'VEGAN B-12 美白牙膏',
             relevant: 'CALI WHITE',
-            description: 'We teamed up with Mother Nature to deliver a toothpaste with the most effective whitening and detoxifying ingredients on Earth. We then took it to the next level by infusing it with the highest quality, most absorbent B12 (Methylcobalamin), for the human body. Feeling great and increased smiling are possible side effects.'
+            description: '我们与大自然母亲合作, 提供了地球上最有效的美白和排毒成分的牙膏! 然后, 我们通过向人体注入最高质量, 最具吸收性的B12 (甲基钴胺素), 将其提升到一个新的水平! 感觉良好并增加微笑可能是副作用!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-10.jpg',
-            title: 'Apeiron Auromère Herbal Toothpaste',
+            title: 'Apeiron Auromère 草药牙膏',
             relevant: 'Apeiron, Toothpaste',
-            description: '24 effective plants in a toothpaste combined - this herbal toothpaste is a natural product from the treasure chest of nature. Extracts of Neem, clove oil, and liquorice work against plaque-and cavity-causing bacteria.'
+            description: '牙膏中的24种有效植物结合在一起-这种草药牙膏是来自自然宝库的天然产品! 印em, 丁香油和甘草的提取物可对抗引起牙菌斑和蛀牙的细菌!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/toothpaste/toothpaste-12.jpg',
-            title: 'Grants Whitening Toothpaste',
+            title: '格兰特美白牙膏',
             relevant: 'Grants, Toothpaste',
-            description: 'Grants Whitening Toothpaste with Baking Soda has a strong, cool minty taste that leaves the mouth feeling fresh and clean. Baking Soda helps to naturally whiten teeth and remove stains.'
+            description: '格兰特(Grants) 美白牙膏含小苏打的美白牙膏具有浓郁, 凉爽的薄荷味, 使口感清新洁净! 小苏打有助于自然美白牙齿并去除污渍!'
         }];
 
         if(flag == true) {
@@ -286,8 +286,8 @@ function showDetail() {
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">${title_1}</h5>
-                            <p class="card-text">Revevant: ${relevant_1}</p>
-                            <p class="card-text">Description: ${description_1}</p>
+                            <p class="card-text">品牌: ${relevant_1}</p>
+                            <p class="card-text">描述: ${description_1}</p>
                         </div>
                     </div>
                     </div>
