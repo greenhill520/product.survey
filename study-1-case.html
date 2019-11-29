@@ -7,7 +7,7 @@
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<meta content="computer, human interaction, waterfallFlow" name="Keywords">
 		<meta content="Test Computer in human interaction" name="description">
-        <title>Product Survey</title>
+        <title>产品调查</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/mdb.min.css">
         <link rel="stylesheet" href="css/index.css" />
@@ -20,7 +20,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Product Survey</a>
+            <a class="navbar-brand" href="#">产品调查</a>
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,8 +28,8 @@
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">首页<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">关于</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,12 +38,12 @@
             <div class="position-relative overflow-hidden p-7 p-md-5 m-md-3 text-center bg-light" id="main" style="visibility: hidden">
                 <div class="col-md-7 p-lg-7 mx-auto my-7">
                     <h1 class="display-4 font-weight-normal" id="title"></h1>
-                    <p class="lead font-weight-normal">In the following section, you are going to view some new products from some companies. Please enjoy yourself.</p>
+                    <p class="lead font-weight-normal">在接下来的部分，你就会浏览到一些公司的最新产品，欢迎查看!</p>
                 </div>
                 <div class="product-device shadow-sm d-none d-md-block"></div>
                 <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 
-                <button type="button" class="btn btn-primary btn-lg" id="study-1" onclick="load_page()">Go head!</button>
+                <button type="button" class="btn btn-primary btn-lg" id="study-1" onclick="load_page()">开始!</button>
             </div>
         </div>
         
@@ -68,7 +68,7 @@
         var case_num = getUrlVars()['case_num'];
 
         if( case_num > 0 && case_num < 7 ) {
-            document.getElementById("title").innerHTML = 'Case ' + case_num;
+            document.getElementById("title").innerHTML = '案例 ' + case_num;
             document.getElementById("main").style.visibility = "visible";
         }
         else {
