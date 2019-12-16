@@ -40,6 +40,24 @@
 		};
 		exports.Class = Class;
 	})();
+	
+	var os = function() {
+		var ua = navigator.userAgent,
+		isWindowsPhone = /(?:Windows Phone)/.test(ua),
+		isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone, 
+		isAndroid = /(?:Android)/.test(ua), 
+		isFireFox = /(?:Firefox)/.test(ua), 
+		isChrome = /(?:Chrome|CriOS)/.test(ua),
+		isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+		isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+		isPc = !isPhone && !isAndroid && !isSymbian;
+		return {
+			isTablet: isTablet,
+			isPhone: isPhone,
+			isAndroid : isAndroid,
+			isPc : isPc
+		};
+	}();
 
 	var flow = exports.Class.extend({
 		init: function(element, options) {
@@ -73,8 +91,12 @@
 			self.wrapWith = self.getElW(self.container);
 			self.columnWidth = (self.options.columnWidth > 0 && self.options.columnWidth < self.wrapWith) ? self.options.columnWidth : self.wrapWith - 2 * self.gutter;
 
-			// self.column = Math.floor((self.wrapWith + self.gutter) / (self.columnWidth + self.gutter));
-			self.column = 4;
+			if(os.isAndroid || os.isPhone){
+				self.column = Math.floor((self.wrapWith + self.gutter) / (self.columnWidth + self.gutter));
+			}
+			else {
+				self.column = 4;
+			}
 			self.waitImg(self.element, function() {
 				self.caculateAllItems();
 			});
