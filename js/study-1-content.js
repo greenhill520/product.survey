@@ -134,7 +134,7 @@ var demo = {
             imgLink: 'imgs/chocolate/chocolate-7.jpg',
             title: '德芙牛奶巧克力',
             relevant: 'Dove',
-            description: '印度农村地区的巧克力口味!'
+            description: '印度农村地区的巧克力口味! 经典广告语: "牛奶香浓，丝般感受"! DOVE: "DO YOU LOVE ME"!'
         }, {
             demoLink: 'https://www.baidu.com',
             imgLink: 'imgs/chocolate/chocolate-8.jpg',
