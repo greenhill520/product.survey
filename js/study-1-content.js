@@ -113,7 +113,7 @@ var demo = {
             description: '各种各样的传统焦糖! 您可以选择-我们所有的香草, 海盐和蘸有牛奶和黑巧克力的巧克力味焦糖!'
         }, {
             demoLink: 'https://www.baidu.com',
-            imgLink: 'imgs/chocolate/chocolate-4.jpg',
+            imgLink: 'imgs/chocolate/chocolate-9.jpg',
             title: '黑巧克力系列',
             relevant: 'MignonChocolate',
             description: '使用最上乘的美味可可将浓郁, 浓郁的黑巧克力完美融合, 将您带入另一个甜蜜的时光!'
