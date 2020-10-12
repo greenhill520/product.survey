@@ -389,7 +389,7 @@ $(function() {
             }
             
             src_path = "imgs/dog/dog-" + box_num + ".gif";
-            _img = `<img src="${src_path}" class="rounded">`;
+            _img = `<img src="${src_path}" style="max-width: 100%; height: auto;"class="rounded">`;
             document.querySelector('#loading-img').innerHTML = _img;
         }
 
